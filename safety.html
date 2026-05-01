@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>نصائح السلامة | إنعاش</title>
+
+  <style>
+    :root {
+      --main-green: #007a3d;
+      --dark-green: #005c2e;
+      --light-green: #e8f5ee;
+      --mint: #f4fbf7;
+      --white: #ffffff;
+      --gray: #f6f8f7;
+      --text: #1f2d2a;
+      --muted: #60736b;
+      --gold: #d6a84f;
+      --soft-yellow: #fff8e8;
+      --soft-red: #fff1f1;
+      --red-text: #9b1c1c;
+      --shadow: 0 18px 45px rgba(0, 92, 46, 0.13);
+      --radius: 26px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Tahoma", "Arial", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(0, 122, 61, 0.09), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(214, 168, 79, 0.10), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f6fbf8 55%, #ffffff 100%);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    header {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(0, 122, 61, 0.12);
+    }
+
+    .navbar {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 118px;
+      height: auto;
+      display: block;
+    }
+
+    .brand-info strong {
+      display: block;
+      color: var(--dark-green);
+      font-size: 1.08rem;
+      line-height: 1.3;
+    }
+
+    .brand-info span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 0.94rem;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: var(--light-green);
+      color: var(--main-green);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 14px;
+      background: var(--light-green);
+      color: var(--dark-green);
+      font-size: 1.45rem;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .page-hero {
+      padding: 74px 0 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: rgba(0, 122, 61, 0.07);
+      top: 20px;
+      left: -180px;
+      z-index: -1;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(0, 122, 61, 0.13);
+      box-shadow: var(--shadow);
+      border-radius: 42px;
+      padding: 45px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      background: rgba(214, 168, 79, 0.12);
+      left: -80px;
+      bottom: -100px;
+    }
+
+    .hero-text,
+    .hero-logo {
+      position: relative;
+      z-index: 2;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      background: var(--light-green);
+      color: var(--dark-green);
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 122, 61, 0.14);
+      font-size: 0.9rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .hero-text h1 {
+      color: var(--dark-green);
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .hero-text h1 span {
+      color: var(--main-green);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-text h1 span::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 7px;
+      width: 100%;
+      height: 11px;
+      background: rgba(214, 168, 79, 0.28);
+      border-radius: 999px;
+      z-index: -1;
+    }
+
+    .hero-text p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 720px;
+    }
+
+    .hero-logo {
+      background: var(--mint);
+      border: 1px solid rgba(0, 122, 61, 0.12);
+      border-radius: 34px;
+      padding: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 280px;
+    }
+
+    .hero-logo img {
+      width: 100%;
+      max-width: 310px;
+      filter: drop-shadow(0 16px 22px rgba(0, 92, 46, 0.13));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    section {
+      padding: 62px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 42px;
+    }
+
+    .section-title span {
+      display: inline-block;
+      color: var(--main-green);
+      background: var(--light-green);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-green);
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .safety-message {
+      background: linear-gradient(135deg, var(--dark-green), var(--main-green));
+      color: var(--white);
+      border-radius: 34px;
+      padding: 38px;
+      box-shadow: 0 24px 60px rgba(0, 92, 46, 0.22);
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 28px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .safety-message::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border: 42px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      left: -120px;
+      top: -150px;
+    }
+
+    .safety-message h2,
+    .safety-message p,
+    .message-points {
+      position: relative;
+      z-index: 1;
+    }
+
+    .safety-message h2 {
+      font-size: clamp(1.7rem, 3vw, 3rem);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .safety-message p {
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .message-points {
+      display: grid;
+      gap: 13px;
+    }
+
+    .message-points div {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+      padding: 15px 18px;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+    }
+
+    .categories-section {
+      background: var(--gray);
+      border-top: 1px solid rgba(0, 122, 61, 0.08);
+      border-bottom: 1px solid rgba(0, 122, 61, 0.08);
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .tab-btn {
+      border: 1px solid rgba(0, 122, 61, 0.16);
+      background: var(--white);
+      color: var(--dark-green);
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 900;
+      font-family: inherit;
+      transition: 0.3s;
+    }
+
+    .tab-btn:hover,
+    .tab-btn.active {
+      background: var(--main-green);
+      color: var(--white);
+      box-shadow: 0 12px 25px rgba(0, 122, 61, 0.18);
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .tip-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 122, 61, 0.12);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 14px 35px rgba(0, 92, 46, 0.07);
+      transition: 0.3s ease;
+      display: block;
+    }
+
+    .tip-card.hide {
+      display: none;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: rgba(0, 122, 61, 0.3);
+    }
+
+    .tip-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .tip-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: var(--light-green);
+      color: var(--main-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .tip-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .tip-head h3 {
+      color: var(--dark-green);
+      font-size: 1.18rem;
+      line-height: 1.4;
+    }
+
+    .tip-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-bottom: 16px;
+    }
+
+    .tip-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .tip-list li {
+      list-style: none;
+      background: var(--mint);
+      border: 1px solid rgba(0, 122, 61, 0.08);
+      color: var(--text);
+      border-radius: 15px;
+      padding: 10px 13px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .check-card {
+      background: var(--white);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 14px 35px rgba(0, 92, 46, 0.07);
+      border: 1px solid rgba(0, 122, 61, 0.12);
+    }
+
+    .check-card h3 {
+      color: var(--dark-green);
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .check-card ul {
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-card li {
+      list-style: none;
+      border-radius: 16px;
+      padding: 13px 15px;
+      font-weight: 700;
+      color: var(--text);
+      background: var(--mint);
+      border: 1px solid rgba(0, 122, 61, 0.08);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .check-card li::before {
+      content: "✓";
+      min-width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--light-green);
+      color: var(--main-green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-top: 1px;
+    }
+
+    .warning-panel {
+      background: var(--soft-yellow);
+      border: 1px solid rgba(214, 168, 79, 0.25);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 14px 35px rgba(0, 92, 46, 0.05);
+    }
+
+    .warning-panel h3 {
+      color: #8a5a00;
+      font-size: 1.45rem;
+      margin-bottom: 18px;
+    }
+
+    .warning-panel ul {
+      display: grid;
+      gap: 12px;
+    }
+
+    .warning-panel li {
+      list-style: none;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(214, 168, 79, 0.16);
+      border-radius: 16px;
+      padding: 13px 15px;
+      font-weight: 800;
+      color: #755000;
+    }
+
+    footer {
+      background: #f8fbf9;
+      border-top: 1px solid rgba(0, 122, 61, 0.12);
+      padding: 34px 0;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .school-logo {
+      width: 92px;
+      height: auto;
+      display: block;
+    }
+
+    .footer-text h3 {
+      color: var(--dark-green);
+      font-size: 1.05rem;
+      margin-bottom: 5px;
+    }
+
+    .footer-text p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.9;
+    }
+
+    .students {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .students span {
+      background: var(--white);
+      border: 1px solid rgba(0, 122, 61, 0.12);
+      color: var(--dark-green);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .top-btn {
+      position: fixed;
+      left: 22px;
+      bottom: 22px;
+      width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 50%;
+      background: var(--main-green);
+      color: var(--white);
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(0, 122, 61, 0.26);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s ease;
+      z-index: 998;
+    }
+
+    .top-btn.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-card,
+      .safety-message,
+      .checklist-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .school-logo {
+        margin: auto;
+      }
+
+      .students {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        position: fixed;
+        top: 86px;
+        right: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        border-bottom: 1px solid rgba(0, 122, 61, 0.12);
+        padding: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        transform: translateY(-130%);
+        transition: 0.35s ease;
+      }
+
+      nav.open {
+        transform: translateY(0);
+      }
+
+      nav a {
+        text-align: center;
+        padding: 14px;
+      }
+
+      .brand img {
+        width: 98px;
+      }
+
+      .brand-info {
+        display: none;
+      }
+
+      .hero-card {
+        padding: 30px 22px;
+        border-radius: 30px;
+      }
+
+      .hero-logo {
+        min-height: 230px;
+      }
+
+      .hero-logo img {
+        max-width: 250px;
+      }
+
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .safety-message,
+      .check-card,
+      .warning-panel {
+        padding: 28px 22px;
+        border-radius: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero {
+        padding: 50px 0 35px;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <img src="websitelogo.jpg" alt="شعار موقع إنعاش">
+        <div class="brand-info">
+          <strong>إنعاش</strong>
+          <span>الأزمات والطوارئ</span>
+        </div>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+
+      <nav id="navMenu">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="emergency.html">دليل الطوارئ</a>
+        <a href="safety.html" class="active">نصائح السلامة</a>
+        <a href="quiz.html">اختبار سريع</a>
+        <a href="contact.html">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-text">
+            <span class="tag">نصائح السلامة</span>
+            <h1>
+              الوقاية تبدأ من
+              <span>تصرف بسيط</span>
+            </h1>
+            <p>
+              تهدف هذه الصفحة إلى تقديم نصائح سهلة وواضحة تساعد على تقليل المخاطر قبل حدوثها،
+              سواء في المدرسة أو المنزل أو الطريق أو الأماكن العامة.
+            </p>
+          </div>
+
+          <div class="hero-logo">
+            <img src="websitelogo.jpg" alt="شعار إنعاش">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="safety-message reveal">
+          <div>
+            <h2>السلامة ليست خطوة واحدة، بل عادة يومية</h2>
+            <p>
+              عندما نعرف مصادر الخطر ونتعامل معها بوعي، تصبح البيئة من حولنا أكثر أمانًا.
+              لذلك يقدم إنعاش نصائح عملية تساعد على الوقاية والاستعداد.
+            </p>
+          </div>
+
+          <div class="message-points">
+            <div>لاحظ الخطر قبل أن يتحول إلى حادث.</div>
+            <div>التزم بالتعليمات في المدرسة والأماكن العامة.</div>
+            <div>احتفظ بأرقام الطوارئ في مكان واضح.</div>
+            <div>اطلب المساعدة عند الشعور بعدم الأمان.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-section">
+      <div class="container">
+        <div class="section-title reveal">
+          <span>مجالات السلامة</span>
+          <h2>نصائح حسب المكان</h2>
+          <p>
+            اختاري المجال المناسب لعرض النصائح المرتبطة به، أو اعرضي جميع النصائح مرة واحدة.
+          </p>
+        </div>
+
+        <div class="tabs reveal">
+          <button class="tab-btn active" data-filter="all">الكل</button>
+          <button class="tab-btn" data-filter="school">المدرسة</button>
+          <button class="tab-btn" data-filter="home">المنزل</button>
+          <button class="tab-btn" data-filter="road">الطريق</button>
+          <button class="tab-btn" data-filter="public">الأماكن العامة</button>
+        </div>
+
+        <div class="tips-grid">
+
+          <div class="tip-card reveal" data-category="school">
+            <div class="tip-head">
+              <div class="tip-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M3 10l9-5 9 5-9 5-9-5z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M7 12v5c3 2 7 2 10 0v-5" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>السلامة في المدرسة</h3>
+            </div>
+            <p>المدرسة بيئة يومية مهمة، والالتزام بالتعليمات يقلل من الإصابات والمواقف الخطرة.</p>
+            <ul class="tip-list">
+              <li>عدم الركض في الممرات أو على الدرج.</li>
+              <li>الالتزام بخطة الإخلاء وقت التدريب أو الطوارئ.</li>
+              <li>إبلاغ المعلمة عند وجود خطر أو إصابة.</li>
+              <li>عدم لمس الأدوات الكهربائية أو الحادة دون إذن.</li>
+            </ul>
+          </div>
+
+          <div class="tip-card reveal" data-category="home">
+            <div class="tip-head">
+              <div class="tip-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M3 11l9-8 9 8" stroke="currentColor" stroke-width="2"/>
+                  <path d="M5 10v10h14V10" stroke="currentColor" stroke-width="2"/>
+                  <path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>السلامة في المنزل</h3>
+            </div>
+            <p>المنزل قد يحتوي على مصادر خطر بسيطة، لكن الانتباه لها يساعد على حماية أفراد الأسرة.</p>
+            <ul class="tip-list">
+              <li>إبعاد الأدوية والمنظفات عن الأطفال.</li>
+              <li>فصل الأجهزة الكهربائية غير المستخدمة.</li>
+              <li>عدم ترك الطعام على النار دون متابعة.</li>
+              <li>تجهيز حقيبة إسعافات أولية في مكان معروف.</li>
+            </ul>
+          </div>
+
+          <div class="tip-card reveal" data-category="road">
+            <div class="tip-head">
+              <div class="tip-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 22l2-20" stroke="currentColor" stroke-width="2"/>
+                  <path d="M17 22L15 2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 2v4M12 10v4M12 18v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>السلامة في الطريق</h3>
+            </div>
+            <p>الطريق يحتاج إلى انتباه دائم، خاصة عند عبور الشارع أو استخدام الحافلة المدرسية.</p>
+            <ul class="tip-list">
+              <li>عبور الطريق من الأماكن المخصصة للمشاة.</li>
+              <li>عدم استخدام الهاتف أثناء عبور الشارع.</li>
+              <li>الالتزام بحزام الأمان داخل السيارة.</li>
+              <li>انتظار الحافلة في مكان آمن بعيد عن الطريق.</li>
+            </ul>
+          </div>
+
+          <div class="tip-card reveal" data-category="public">
+            <div class="tip-head">
+              <div class="tip-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="16" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+                  <path d="M3 21c1-4 3.5-6 5-6s4 2 5 6" stroke="currentColor" stroke-width="2"/>
+                  <path d="M11 21c1-4 3.5-6 5-6s4 2 5 6" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>السلامة في الأماكن العامة</h3>
+            </div>
+            <p>في الأماكن المزدحمة، يساعد الوعي على تجنب الضياع أو التزاحم أو الإصابات.</p>
+            <ul class="tip-list">
+              <li>تحديد نقطة تجمع مع العائلة أو المجموعة.</li>
+              <li>عدم الاقتراب من المناطق الممنوعة أو الخطرة.</li>
+              <li>اتباع تعليمات الأمن والمنظمين.</li>
+              <li>طلب المساعدة من شخص مسؤول عند الحاجة.</li>
+            </ul>
+          </div>
+
+          <div class="tip-card reveal" data-category="home">
+            <div class="tip-head">
+              <div class="tip-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14h8l-1 8 11-14h-8V2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>السلامة الكهربائية</h3>
+            </div>
+            <p>التعامل الخاطئ مع الكهرباء قد يسبب حوادث خطيرة، لذلك يجب الحذر من مصادر التيار.</p>
+            <ul class="tip-list">
+              <li>عدم لمس المقابس بأيدٍ مبللة.</li>
+              <li>عدم تحميل المشترك الكهربائي بأجهزة كثيرة.</li>
+              <li>إبلاغ شخص بالغ عند ملاحظة سلك تالف.</li>
+              <li>فصل الجهاز فورًا عند ظهور رائحة احتراق.</li>
+            </ul>
+          </div>
+
+          <div class="tip-card reveal" data-category="school">
+            <div class="tip-head">
+              <div class="tip-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M6 20V7l6-3 6 3v13" stroke="currentColor" stroke-width="2"/>
+                  <path d="M9 11h6M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>السلامة داخل الفصل</h3>
+            </div>
+            <p>الفصل الدراسي يحتاج إلى ترتيب وانتباه حتى تبقى البيئة مناسبة للتعلم وآمنة للجميع.</p>
+            <ul class="tip-list">
+              <li>إبقاء الممرات بين الطاولات خالية.</li>
+              <li>عدم دفع الزميلات أو المزاح بطريقة خطرة.</li>
+              <li>استخدام الأدوات المدرسية بطريقة صحيحة.</li>
+              <li>إبلاغ المعلمة عن أي سقوط أو إصابة فورًا.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title reveal">
+          <span>قائمة الاستعداد</span>
+          <h2>أشياء بسيطة تعزز السلامة</h2>
+          <p>
+            الاستعداد الجيد يجعل التعامل مع المواقف الطارئة أسهل وأكثر تنظيمًا.
+          </p>
+        </div>
+
+        <div class="checklist-grid">
+          <div class="check-card reveal">
+            <h3>قبل حدوث الطوارئ</h3>
+            <ul>
+              <li>معرفة مخارج الطوارئ في المدرسة أو المكان الموجود فيه الشخص.</li>
+              <li>حفظ أرقام الطوارئ المهمة أو وضعها في مكان واضح.</li>
+              <li>التدرب على خطة الإخلاء وعدم التعامل معها باستهانة.</li>
+              <li>معرفة مكان حقيبة الإسعافات الأولية وطريقة طلب المساعدة.</li>
+            </ul>
+          </div>
+
+          <div class="warning-panel reveal">
+            <h3>تنبيهات مهمة</h3>
+            <ul>
+              <li>لا تتجاهل علامات الخطر حتى لو بدت بسيطة.</li>
+              <li>لا تتصرف بناءً على التخمين في الحالات الخطيرة.</li>
+              <li>لا تنشر الذعر بين الآخرين وقت الأزمة.</li>
+              <li>لا تتأخر في طلب مساعدة شخص مختص أو مسؤول.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <img src="schoollogo.jpg" alt="شعار مدارس الأرقم الأهلية" class="school-logo">
+
+      <div class="footer-text">
+        <h3>مدارس الأرقم الأهلية – بنات</h3>
+        <p>
+          مشروع التخرج: إنعاش | الأزمات والطوارئ<br>
+          إشراف المعلمة: سمر القحطاني
+        </p>
+      </div>
+
+      <div class="students">
+        <span>لينا الطويان</span>
+        <span>شذى السعيد</span>
+        <span>جوان المطيري</span>
+        <span>رنا المرشدي</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="top-btn" id="topBtn" aria-label="العودة للأعلى">↑</button>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+    const topBtn = document.getElementById("topBtn");
+    const revealItems = document.querySelectorAll(".reveal");
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const tipCards = document.querySelectorAll(".tip-card");
+
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+      menuBtn.textContent = navMenu.classList.contains("open") ? "×" : "☰";
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        topBtn.classList.add("show");
+      } else {
+        topBtn.classList.remove("show");
+      }
+
+      revealOnScroll();
+    });
+
+    topBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    function revealOnScroll() {
+      revealItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (itemTop < windowHeight - 90) {
+          item.classList.add("visible");
+        }
+      });
+    }
+
+    tabBtns.forEach(button => {
+      button.addEventListener("click", () => {
+        tabBtns.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+
+        tipCards.forEach(card => {
+          const category = card.getAttribute("data-category");
+
+          if (filter === "all" || filter === category) {
+            card.classList.remove("hide");
+          } else {
+            card.classList.add("hide");
+          }
+        });
+      });
+    });
+
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
